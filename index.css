@@ -1,0 +1,44 @@
+body {
+  font-family: "Bradley Hand", cursive;
+  font-size: 35pt;
+  background-color: #ffa07a;
+}
+
+input,
+button {
+  font-size: 30pt;
+  border-radius: 0.25em;
+  padding: 0.25em;
+  margin-left: 5px;
+  font-family: "Bradley Hand", cursive;
+}
+
+input[type="checkbox"] {
+  transform: scale(2.5);
+  width: 30pt;
+}
+
+input:hover {
+  background-color: #ff8500;
+  transition: 0.8s;
+}
+
+button:hover {
+  background-color: #ff6347;
+  transition: 0.5s;
+}
+
+.todo > button {
+  margin-left: 0.5em;
+}
+
+.todos > div {
+  margin: 0.5em;
+}
+
+#todos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
