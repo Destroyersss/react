@@ -1,3 +1,7 @@
+/* Add JavaScript code here! */
+console.log("Hello World! You did! Welcome to Snowpack :D");
+5;
+
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
