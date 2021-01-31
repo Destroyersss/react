@@ -52,21 +52,39 @@ const TodoList = () => {
     setId(id + 1);
     setNewTodo("");
   };
+  const FilterApp = () => {
+    let filterMap = {
+      all: "Все",
+      active: "Активные",
+      completed: "Завершенные",
+    };
 
-  let filteredComplited = todos.filter(function (e) {
-    return e.done === true;
+  let [filterState, setFilterSTate] = useState("all");
+
+  let filteredUser = todos.filter((е) => {
+    if (filterState === "active") {
+      return !е.done;
+    }
+    if (filterState === "completed") {
+      return е.done;
+    }
+    return true;
   });
-  console.log("filteredComplited", filteredComplited);
 
-  let filteredActive = todos.filter(function (e) {
-    return e.done === false;
-  });
+  // let filteredComplited = todos.filter(function (e) {
+  //   return e.done === true;
+  // });
+  // console.log("filteredComplited", filteredComplited);
 
-  console.log("filteredActive", filteredActive);
+  // let filteredActive = todos.filter(function (e) {
+  //   return e.done === false;
+  // });
 
-  let filteredAll = todos;
+  // console.log("filteredActive", filteredActive);
 
-  console.log("filteredAll", filteredAll);
+  // let filteredAll = todos;
+
+  // console.log("filteredAll", filteredAll);
 
   return (
     <div className="todos">
@@ -98,9 +116,12 @@ const TodoList = () => {
       >
         Save
       </button>
-      <button onClick={() => filteredComplited}>Complited</button>
-      <button onClick={() => filteredActive}>Active</button>
-      <button onClick={() => filteredAll}>All</button>
+      <button onClick={() => setFilterSTate("Выполненые")}>Complited</button>
+      <button onClick={() => setFilterSTate("Активные")}>Active</button>
+      <button onClick={() => setFilterSTate("Все")}>All</button>
+      {/* <pre>filterState: {JSON.stringify(filterState, null, 2)}</pre>
+      <br />
+      <pre>{JSON.stringify(filteredUser, null, 2)}</pre> */}
     </div>
   );
 };
